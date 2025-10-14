@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — Online Resume</title>
+  <meta name="description" content="Online resume of Your Name: experience, education, and skills." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header container">
+    <div class="identity">
+      <img class="headshot" src="images/headshot.jpg" alt="Headshot of Your Name" />
+      <div class="identity-text">
+        <h1 class="name" id="top">Your Name</h1>
+        <p class="tagline">Full-Stack / Cloud • Dublin, Ireland</p>
+        <ul class="contacts">
+          <li><a href="mailto:you@example.com">you@example.com</a></li>
+          <li><a href="tel:+353850000000">+353 85 000 0000</a></li>
+          <li><a href="https://www.linkedin.com/in/yourname" target="_blank" rel="noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/yourname" target="_blank" rel="noreferrer">GitHub</a></li>
+          <li><span>Dublin, Ireland</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills & Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- SUMMARY -->
+    <section class="card" aria-labelledby="summary-title">
+      <h2 id="summary-title">Profile</h2>
+      <p>
+        Brief summary about you. Example: Full-stack engineer with experience in AWS, data integration and automation. 
+        Built scalable services, CI/CD pipelines, and improved performance/costs. Multilingual.
+      </p>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="card" id="experience" aria-labelledby="experience-title">
+      <div class="section-head">
+        <h2 id="experience-title">Employment History</h2>
+        <div class="filters" role="group" aria-label="Timeline filters">
+          <label>
+            From
+            <input type="number" id="from-year" inputmode="numeric" placeholder="2019" min="1900" max="2099" />
+          </label>
+          <label>
+            To
+            <input type="number" id="to-year" inputmode="numeric" placeholder="2025" min="1900" max="2099" />
+          </label>
+          <button class="btn" id="apply-filter" type="button">Apply</button>
+          <button class="btn ghost" id="clear-filter" type="button">Clear</button>
+        </div>
+      </div>
+
+      <!-- Timeline (interactive) -->
+      <ol class="timeline" id="timeline" aria-live="polite">
+        <!-- Each item needs data-year for filtering and keyboard toggling -->
+        <li class="timeline-item" data-year="2025" tabindex="0" aria-expanded="false">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <div class="timeline-row">
+              <span class="year">2025–Present</span>
+              <h3 class="role">Customer Support Associate (Bilingual)</h3>
+              <span class="company">4G Clinical — Dublin</span>
+            </div>
+            <div class="details">
+              <ul>
+                <li>Resolved Tier-1/2 issues across multilingual channels; maintained 95% CSAT.</li>
+                <li>Authored SOPs and runbooks; reduced MTTR by 30%.</li>
+                <li>Automated log triage with Python + CloudWatch, cutting manual effort by 40%.</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="timeline-item" data-year="2024" tabindex="0" aria-expanded="false">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <div class="timeline-row">
+              <span class="year">2023–2024</span>
+              <h3 class="role">Software Engineer Intern</h3>
+              <span class="company">Company — Dublin</span>
+            </div>
+            <div class="details">
+              <ul>
+                <li>Built data pipeline (S3 → Glue → Redshift) to centralize analytics; saved €1k/mo.</li>
+                <li>Implemented CI/CD (GitLab CI → CodeDeploy) with blue/green rollout.</li>
+                <li>Containerized services with Docker; deployment time 30m → 5m.</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="timeline-item" data-year="2022" tabindex="0" aria-expanded="false">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <div class="timeline-row">
+              <span class="year">2021–2022</span>
+              <h3 class="role">Project Contributor</h3>
+              <span class="company">Freelance / Open Source</span>
+            </div>
+            <div class="details">
+              <ul>
+                <li>Built serverless image API with S3 + CloudFront + Lambda@Edge.</li>
+                <li>Implemented monitoring/alerting via CloudWatch + SNS.</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ol>
+      <p class="hint">Tip: Click or press Enter/Space on a timeline item to expand details.</p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="card" id="education" aria-labelledby="education-title">
+      <h2 id="education-title">Education</h2>
+      <ul class="simple-list">
+        <li>
+          <strong>MSc, Digital Innovation</strong> — University College Dublin (2023)
+        </li>
+        <li>
+          <strong>BEng, Materials Science</strong> — Your University (2020)
+        </li>
+      </ul>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="card" id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills & Certifications</h2>
+      <div class="tags">
+        <span class="tag">JavaScript / TypeScript</span>
+        <span class="tag">Python</span>
+        <span class="tag">AWS (EC2, S3, RDS, Lambda, CFN)</span>
+        <span class="tag">Docker</span>
+        <span class="tag">SQL / NoSQL</span>
+        <span class="tag">Git, CI/CD</span>
+      </div>
+      <ul class="simple-list compact">
+        <li>AWS Cloud Practitioner (2025)</li>
+        <li>Solutions Architect Associate (in progress)</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="card" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p>
+        Prefer email: <a href="mailto:you@example.com">you@example.com</a> • Phone: <a href="tel:+353850000000">+353 85 000 0000</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <a class="back-top" href="#top" aria-label="Back to top">↑ Back to top</a>
+    <small>© <span id="year"></span> Your Name • Built with semantic HTML, CSS, and vanilla JS.</small>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
