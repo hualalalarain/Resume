@@ -37,32 +37,5 @@ items.forEach(item => {
   });
 });
 
-// Year range filtering
-const fromEl = document.getElementById('from-year');
-const toEl = document.getElementById('to-year');
-const applyBtn = document.getElementById('apply-filter');
-const clearBtn = document.getElementById('clear-filter');
-
-function applyFilter(){
-  const from = parseInt(fromEl.value, 10);
-  const to = parseInt(toEl.value, 10);
-  items.forEach(li => {
-    const year = parseInt(li.dataset.year, 10);
-    const show =
-      (!Number.isFinite(from) || year >= from) &&
-      (!Number.isFinite(to) || year <= to);
-    li.style.display = show ? '' : 'none';
-  });
-}
-
-function clearFilter(){
-  fromEl.value = '';
-  toEl.value = '';
-  items.forEach(li => li.style.display = '');
-}
-
-applyBtn.addEventListener('click', applyFilter);
-clearBtn.addEventListener('click', clearFilter);
-
-// Optional: initialize first item expanded for better affordance
+// Default to first item expanded for better affordance
 if (items[0]) items[0].setAttribute('aria-expanded', 'true');
